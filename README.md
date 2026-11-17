@@ -28,12 +28,34 @@
 
 ```
 malmun-english.html   앱 본체 (아티팩트 페이지 한 장)
+index.html            웹앱 버전 (web/build.py가 만듦)
+manifest.webmanifest  웹앱 설치 정보
+sw.js                 오프라인 캐시
+icons/                설치용 아이콘
+web/                  웹앱 빌드 스크립트와 대체 동작 코드
 ill/00.webp ~ 89.webp 단어·표현 일러스트 90장 (720×540)
 malmun-icon.svg/.png  앱 아이콘
 illust-trial/         그림 스타일을 고를 때 만든 시안
 ```
 
-## 쓰는 방법
+## 웹앱으로 설치하기
+
+주소: https://yhjang0315-source.github.io/malmun-english/
+
+Chrome이나 Edge로 위 주소를 열고 "설치"(또는 메뉴의 "앱 설치")를 누르면 홈 화면·바탕화면에 앱으로 깔립니다. iPhone·iPad는 Safari의 공유 버튼에서 "홈 화면에 추가"를 누릅니다.
+
+웹앱 버전에서 되는 것과 안 되는 것:
+
+| 기능 | 웹앱 버전 |
+|---|---|
+| 시험 문제, 단어장, 일러스트, 공부 계획, 테마 | 됨 |
+| 발음 듣기, 말해서 입력 | 브라우저 기능으로 동작 (브라우저에 따라 다름) |
+| 학습 기록 | 이 기기의 브라우저에만 저장 |
+| AI 회화, 첨삭, 새 문제 만들기 | 안 됨 (Claude 아티팩트에서만 동작) |
+
+`index.html`은 `python web/build.py`가 `malmun-english.html`에서 만들어 냅니다. 앱을 고친 뒤에는 다시 돌려 주세요.
+
+## Claude 아티팩트로 쓰는 방법
 
 1. Claude에서 `malmun-english.html`을 아티팩트로 게시합니다.
 2. `ill/` 폴더의 그림을 같은 경로(`ill/NN.webp`)로 함께 게시합니다.
